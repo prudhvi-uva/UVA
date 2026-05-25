@@ -29,11 +29,11 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isTransparent 
-          ? "bg-transparent border-b border-transparent py-6" 
+          ? "bg-transparent border-b border-transparent py-2" 
           : "bg-paper border-b border-ink/10 py-2 shadow-sm"
       )}
     >
-      <div className="mx-auto flex max-w-[var(--spacing-container)] items-center justify-between px-6 md:px-12">
+      <div className="mx-auto flex max-w-(--spacing-container) items-center justify-between px-6 md:px-12">
         {/* Logo */}
         <Link href="/" className="logo flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -42,7 +42,7 @@ export function Navbar() {
             alt="UVA Tech Services" 
             className={cn(
               "w-auto transition-all duration-300",
-              isScrolled ? "h-[68px]" : "h-[96px]",
+              isScrolled ? "h-17" : "h-[96px]",
               isTransparent && "invert"
             )} 
           />

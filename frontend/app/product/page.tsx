@@ -20,7 +20,7 @@ export default function ProductPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-24 flex-grow border-b border-ink/10 relative overflow-hidden">
+      <SectionWrapper className="pt-32 pb-16 md:pt-40 md:pb-24 grow border-b border-ink/10 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-ink text-paper text-center py-2 px-6 rounded-b-3xl font-bold tracking-wide text-sm z-20">
           {hero.banner}
         </div>
@@ -66,7 +66,7 @@ export default function ProductPage() {
               <h3 className="font-heading text-2xl font-bold uppercase tracking-wide mb-4">
                 {tier.name}
               </h3>
-              <p className="font-body text-mist text-base leading-relaxed mb-6 flex-grow">
+              <p className="font-body text-mist text-base leading-relaxed mb-6 grow">
                 {tier.description}
               </p>
               <div className="bg-ink/5 p-4 rounded-xl">

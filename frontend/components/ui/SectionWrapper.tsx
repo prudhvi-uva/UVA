@@ -26,7 +26,7 @@ export function SectionWrapper({
       className={cn("w-full py-section px-6 md:px-12", className)}
       {...props}
     >
-      <div className="mx-auto max-w-[var(--spacing-container)] w-full">
+      <div className="mx-auto max-w-(--spacing-container) w-full">
         {children}
       </div>
     </section>

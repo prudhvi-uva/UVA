@@ -104,7 +104,7 @@ export default function LeadershipPage() {
                 className="group flex flex-col bg-paper border border-ink/20 rounded-3xl overflow-hidden hover:border-ink transition-all duration-300 reveal-item hover:shadow-xl"
                 style={{ animationDelay: `${index * 150}ms` }}
               >
-                <div className="p-10 flex flex-col flex-grow items-center text-center">
+                <div className="p-10 flex flex-col grow items-center text-center">
                   <div className="w-24 h-24 rounded-full bg-ink/10 mb-6 flex items-center justify-center">
                     <span className="font-heading text-3xl font-bold uppercase text-ink">
                       {member.name.split(' ').map(n => n[0]).join('')}
@@ -118,7 +118,7 @@ export default function LeadershipPage() {
                     {member.role}
                   </p>
                   
-                  <div className="flex-grow flex items-center justify-center mb-8">
+                  <div className="grow flex items-center justify-center mb-8">
                     <p className="font-body text-lg italic text-ink/80">
                       {member.quote}
                     </p>
