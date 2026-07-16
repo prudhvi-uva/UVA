@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 
 export function Navbar() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -22,15 +22,13 @@ export function Navbar() {
   const hasDarkHero = pathname === '/' || pathname === '/uva-leadership' || pathname === '/uva-careers';
 
   // We want transparent header at top ONLY on pages with dark hero backgrounds
-  const isTransparent = hasDarkHero && !isScrolled;
+  // const isTransparent = hasDarkHero && !isScrolled;
+  const isTransparent = true;
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isTransparent 
-          ? "bg-transparent border-b border-transparent py-2" 
-          : "bg-paper border-b border-ink/10 py-2 shadow-sm"
+        "absolute top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent py-2" 
       )}
     >
       <div className="mx-auto flex max-w-(--spacing-container) items-center justify-between px-6 md:px-12">
@@ -41,9 +39,7 @@ export function Navbar() {
             src={CONTENT.assets.logo} 
             alt="UVA Tech Services" 
             className={cn(
-              "w-auto transition-all duration-300",
-              isScrolled ? "h-17" : "h-[96px]",
-              isTransparent && "invert"
+              "w-auto transition-all duration-300 h-34"
             )} 
           />
         </Link>
@@ -55,29 +51,26 @@ export function Navbar() {
               key={item.label}
               href={item.href}
               className={cn(
-                "nav-link font-body text-base font-bold uppercase tracking-wider transition-colors duration-300",
-                isTransparent ? "text-paper hover:text-paper/70" : "text-ink hover:text-mist"
+                "nav-link font-body text-base font-bold uppercase tracking-wider transition-colors duration-300 text-ink",
+                hasDarkHero?"hover:text-white hover:border-b-3":"hover:text-zinc-600 hover:border-b-1"
               )}
             >
               {item.label}
             </Link>
           ))}
-        </nav>
-
-        {/* CTA & Mobile Toggle */}
-        <div className="flex items-center gap-4">
           <Button 
             variant="primary" 
             size="md" 
             className={cn(
-              "hidden md:flex transition-all duration-300",
-              isTransparent 
-                ? "bg-paper text-ink hover:bg-paper/90 border-transparent" 
-                : "bg-ink text-paper hover:bg-ink/90"
+              "hidden md:flex transition-all duration-300 bg-ink text-paper hover:bg-ink/90"
             )}
           >
-            Get Quote
+            Enquire now
           </Button>
+        </nav>
+
+        {/* CTA & Mobile Toggle */}
+        <div className="flex items-center gap-4">
           <button
             className={cn("md:hidden transition-colors duration-300", isTransparent ? "text-paper" : "text-ink")}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -103,7 +96,7 @@ export function Navbar() {
               </Link>
             ))}
             <Button variant="primary" size="md" className="w-full mt-4">
-              Get Quote
+              Enquire now
             </Button>
           </nav>
         </div>

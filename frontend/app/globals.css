@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #000000;
-  --color-paper: #FFFFFF;
-  --color-mist: #8A8A8A;
+  --color-ink: #FAFAF8; 
+  --color-paper: #14161C;
+  --color-mist: #8A8F9C; 
   
   --font-heading: var(--font-montserrat);
   --font-body: var(--font-roboto);
@@ -22,6 +22,10 @@
   :root {
     --background: var(--color-paper);
     --foreground: var(--color-ink);
+    --ink-950: #14161C;
+    --paper-050: #FAFAF8;
+    --slate-400: #8A8F9C;
+    --line-200: #E4E3DE;
   }
 
   body {
@@ -33,9 +37,104 @@
   }
 }
 
+@layer components {
+  .signal-line {
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .signal-line-primary {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 760;
+    animation: signal-draw 1.4s ease-out forwards, signal-drift 8s ease-in-out infinite 1.4s;
+  }
+
+  .signal-line-ghost {
+    opacity: 0.34;
+    stroke-width: 1;
+    stroke-dasharray: 520;
+    stroke-dashoffset: 520;
+    animation: signal-draw 1.7s ease-out forwards;
+  }
+
+  .signal-tick {
+    opacity: 0.12;
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .signal-node {
+    fill: var(--accent);
+    opacity: 0.76;
+    stroke: var(--paper-050);
+    stroke-width: 2;
+    transform-origin: center;
+    animation: signal-pulse 5.5s ease-in-out infinite;
+  }
+
+  .signal-node-soft {
+    opacity: 0.42;
+  }
+
+  .signal-sweep-line {
+    transform-box: fill-box;
+    transform-origin: 0% 100%;
+    animation: signal-draw 1.2s ease-out forwards, signal-sweep 9s linear infinite 1.2s;
+  }
+
+  .signal-frame {
+    isolation: isolate;
+  }
+}
+
+@keyframes signal-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes signal-drift {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes signal-pulse {
+  0%,
+  100% {
+    opacity: 0.54;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes signal-sweep {
+  from {
+    transform: rotate(-14deg);
+  }
+  to {
+    transform: rotate(20deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .signal-line-primary,
+  .signal-line-ghost,
+  .signal-sweep-line {
+    stroke-dashoffset: 0;
   }
 }

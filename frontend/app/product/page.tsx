@@ -1,10 +1,9 @@
 import React from 'react';
 import { CONTENT } from '@/constants/content';
 import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Button } from '@/components/ui/Button';
-import { CheckCircle2, Store, CreditCard, ChefHat } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {

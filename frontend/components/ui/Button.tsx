@@ -4,13 +4,10 @@ import { cn } from '@/lib/utils';
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
   size?: 'sm' | 'md' | 'lg';
-  asChild?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', asChild = false, ...props }, ref) => {
-    const Comp = asChild ? (React.Fragment as any) : "button"; // Simplified for now since we aren't using Radix Slot
-
+  ({ className, variant = 'primary', size = 'md', ...props }, ref) => {
     return (
       <button
         ref={ref}

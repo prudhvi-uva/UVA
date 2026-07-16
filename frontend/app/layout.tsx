@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Montserrat, Roboto } from "next/font/google";
+import { Montserrat, Roboto, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { WhatsAppFloatingButton } from "@/components/ui/WhatsAppFloatingButton";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -15,6 +16,13 @@ const roboto = Roboto({
   variable: "--font-roboto",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -58,11 +66,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${roboto.variable}`}>
+    <html lang="en" className={`${montserrat.variable} ${roboto.variable} ${jetbrainsMono.variable}`}>
       <body className="antialiased flex flex-col min-h-screen bg-paper text-ink font-body">
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppFloatingButton />
       </body>
     </html>
   );

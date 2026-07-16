@@ -49,7 +49,7 @@ export default function LeadershipPage() {
             <source src="https://videos.pexels.com/video-files/3209829/3209829-uhd_3840_2160_25fps.mp4" type="video/mp4" />
           </video>
           {/* Overlay */}
-          <div className="absolute inset-0 bg-ink/65" />
+          <div className="absolute inset-0 bg-ink/40" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">

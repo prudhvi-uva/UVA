@@ -1,17 +1,91 @@
 export const CONTENT = {
   hero: {
-    headline: "At UVA, we push the boundaries of technology",
-    subheadline: "Our mission is to INNOVATE with cutting-edge technology, INTEGRATE solutions across domains, and INSPIRE transformation in the digital world.",
-    ctaPrimary: "Explore Our Services",
-    ctaSecondary: "Get Your Quote Now !!!",
+    headline: "Engineering the Future of Intelligence",
+    subheadline: "We engineer intelligent products that transform ideas into AI-powered platforms, autonomous agents, and robotics helping businesses innovate faster, operate smarter, and lead the future.",
+    ctaPrimary: "Explore Our Products",
+    ctaSecondary: "Contact Us",
   },
   products: {
+    // heading: "What we're building",
+    // subheading: "Two products in market. Two more in the lab.",
+    // eyebrow: "Product Lab",
     heading: "Something exciting is coming soon!",
     subheading: "Beyond our services, we're innovating something game-changing. Stay tuned for the big reveal!",
     teaser: "Curiosity is at an all-time high.",
     rating: "★★★★★",
     cta: "Discover",
   },
+  productCards: [
+    {
+      id: 'dp360',
+      tag: 'DATA PLATFORM',
+      name: 'DP360',
+      link:'',
+      accent: 'copper' as const,
+      mode: 'toggle' as const,
+      fmcg: {
+        positioning: 'Retail and consumer data, unified into one decision layer.',
+        bullets: [
+          'Demand forecasting tuned to SKU-level seasonality',
+          'Retail and distributor data reconciled automatically',
+          'Dashboards built for category and channel managers',
+        ],
+      },
+      nonFmcg: {
+        positioning: 'The same platform, reshaped for industrial and B2B data.',
+        bullets: [
+          'Asset and supply-chain data unified across plants',
+          'Configurable to sector-specific KPIs',
+          'Role-based dashboards for ops and finance teams',
+        ],
+      },
+      cta: { label: 'Learn more', href: '/product' },
+    },
+    {
+      id: 'paarth',
+      tag: 'AI AGENT',
+      name: 'Paarth',
+      link:'',
+      accent: 'circuit' as const,
+      mode: 'ticker' as const,
+      positioning: 'An agent that tests your software while you build it.',
+      bullets: [
+        'Writes and runs test cases from your existing codebase',
+        'Flags regressions before they reach QA',
+        'Learns your product\'s edge cases over time',
+      ],
+      tickerLines: [
+        '✓ checkout flow — passed',
+        '✓ auth redirect — passed',
+        '✓ payment gateway — passed',
+        '✓ session timeout — passed',
+        '✓ cart sync — passed',
+        '✓ error boundary — passed',
+      ],
+      cta: { label: 'Learn more', href: '/product' },
+    },
+    {
+      id: 'p3',
+      tag: 'COMING SOON',
+      name: 'Product 3',
+      link:'',
+      accent: 'ink' as const,
+      mode: 'static' as const,
+      positioning: 'Details coming soon — something worth waiting for.',
+      bullets: [] as string[],
+      cta: null,
+    },
+    {
+      id: 'p5',
+      tag: 'COMING SOON',
+      name: 'Product 5',
+      accent: 'ink' as const,
+      mode: 'static' as const,
+      positioning: 'Details coming soon — something worth waiting for.',
+      bullets: [] as string[],
+      cta: null,
+    },
+  ],
   product: {
     hero: {
       headline: "Smarter Retail Starts Here.",
@@ -25,19 +99,19 @@ export const CONTENT = {
     },
     tiers: [
       {
-        icon: "🟢",
+        icon: "",
         name: "StoreFront 360",
         description: "Build your store online. Manage prices, orders, payments — all from one place.",
         ideal: "Restaurant websites, Kirana stores, boutiques, Home vendors."
       },
       {
-        icon: "🟡",
+        icon: "",
         name: "PulsePOS Web",
         description: "Turn any browser into your sales terminal. Simple billing, real-time reports, payment gateway built in.",
         ideal: "Bakeries, cafés, thrift stores."
       },
       {
-        icon: "🔴",
+        icon: "",
         name: "PulseHQ POS",
         description: "Complete control for serious business: kitchen sync, staff HR, feedback, inventory — in one place.",
         ideal: "Restaurants and Bars, salons, cloud kitchens."
@@ -105,7 +179,7 @@ export const CONTENT = {
     }
   ],
   assets: {
-    logo: "https://assets.zyrosite.com/m2Wr4lwMDehoXKvO/uva-logo-black-m7V592J5koHLJ2X3.png",
+    logo: "/UVA_logo.png",
     heroVideo: "https://videos.pexels.com/video-files/8059189/8059189-uhd_2732_1440_25fps.mp4",
     serviceVideo: "https://videos.pexels.com/video-files/3141208/3141208-uhd_2560_1440_25fps.mp4",
     images: {
@@ -331,20 +405,24 @@ export const CONTENT = {
     text: '"At UVA, we specialize in delivering cutting-edge technology solutions to empower businesses and drive innovation. Whether you need custom development or advanced tech solutions, we’ve got you covered."'
   },
   contact: {
-    heading: "Got a project in mind? Let’s bring it to life —together!",
-    subheading: "We are here to assist you. Please fill out the form below with your details, and we will get back to you shortly.",
+    heading: "What are you building?",
+    subheading: "Custom development or embedded systems — tell us what you're building, and we'll tell you how fast we can get there.",
     phones: ["+44 7747523054", "+91 9949919473"],
     emails: ["enquiries@uvaproit.com", "enquiries@uvaproit.in"],
     offices: {
       uk: {
         title: "UK Office",
         company: "UVA Product and IT Service Limited",
-        address: "Park House, 37 Clarence Street, Leicester, Leicestershire, England, LE1 3RW"
+        address: "Park House, 37 Clarence Street, Leicester, Leicestershire, England, LE1 3RW",
+        email: "enquiries@uvaproit.com",
+        phone: "+44 7747523054"
       },
       ind: {
         title: "IND Office",
         company: "UVA Product and IT IND Service Limited",
-        address: "Hanamkonda, Warangal, Telangana, India, 506001"
+        address: "Hanamkonda, Warangal, Telangana, India, 506001",
+        email: "enquiries@uvaproit.in",
+        phone: "+91 9949919473"
       }
     }
   },
@@ -358,8 +436,6 @@ export const CONTENT = {
   nav: [
     { label: "Home", href: "/" },
     { label: "Products", href: "/product" },
-    { label: "Services", href: "/#services" },
     { label: "About Us", href: "/uva-leadership" },
-    { label: "Careers", href: "/uva-careers" }
   ]
 };
