@@ -35,7 +35,7 @@ export default function LeadershipPage() {
       <Navbar />
 
       {/* Hero Video Section (Vision & Mission) */}
-      <SectionWrapper className="relative min-h-[85vh] flex items-center justify-center pt-32 pb-20 overflow-hidden text-background">
+      <SectionWrapper className="relative min-h-[100vh] flex items-center justify-center pt-32 pb-20 overflow-hidden text-background">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <video 
@@ -49,7 +49,7 @@ export default function LeadershipPage() {
             <source src="https://videos.pexels.com/video-files/3209829/3209829-uhd_3840_2160_25fps.mp4" type="video/mp4" />
           </video>
           {/* Overlay */}
-          <div className="absolute inset-0 bg-foreground/40" />
+          <div className="absolute inset-0 bg-foreground/30" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full">

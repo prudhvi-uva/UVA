@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { SignalWaveform } from "@/components/ui/SignalWaveform";
+import { DecorativeArrow } from "@/components/ui/DecorativeArrow";
 import { products, type ProductHighlight } from "@/lib/products";
 import { cn } from "@/lib/utils";
 
@@ -62,29 +63,24 @@ export function Products() {
       className="relative overflow-visible bg-background py-0 text-foreground"
       revealSelector="none"
     >
-      <div className="sticky top-0 z-20 -mx-6 border-b border-foreground/10 bg-background/95 px-6 py-3 backdrop-blur md:-mx-12 md:px-12">
-        <nav
-          aria-label="Product quick links"
-          className="mx-auto flex w-full max-w-(--spacing-container) items-center justify-between"
-        >
+      {/* Products Section Header */}
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center text-center px-6 py-20 md:px-12">
 
-          {/* Product pills */}
-          <div className="flex items-center gap-2 overflow-x-auto">
-            {products.map((product) => (
-              <a
-                key={product.id}
-                href={`#${product.id}`}
-                className="rounded-full border border-foreground/20 px-4 py-1.5 font-body text-[11px] font-bold uppercase tracking-widest text-foreground transition-colors hover:border-foreground hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
-                style={productStyle(product.accent)}
-              >
-                {product.name}
-              </a>
-            ))}
-          </div>
-        </nav>
+        {/* The Massive Scribble Arrow Background */}
+        <DecorativeArrow className="absolute left-1/2 top-1/2 w-[200%] md:w-[140%] max-w-none -translate-x-1/2 -translate-y-[60%] -rotate-6 text-[#ff4f33] opacity-[0.2] pointer-events-none z-0" />
+
+        <div className="relative z-10 inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-4 py-1.5 mb-4 text-[10px] font-bold uppercase tracking-widest text-muted">
+          Our Solutions
+        </div>
+        <h2 className="relative z-10 font-heading text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground">
+          Discover The Products
+        </h2>
+        <p className="relative z-10 mt-6 text-foreground/70 text-sm md:text-base max-w-2xl">
+          From advanced robotics intelligence to executive AI agents and next-generation e-commerce platforms, explore our cutting-edge products designed to accelerate the future.
+        </p>
       </div>
 
-      <div className="divide-y divide-ink/10" ref={container}>
+      <div className="divide-y divide-foreground/10" ref={container}>
         {products.map((product, index) => {
           const visualFirst = index !== 1;
 
@@ -114,13 +110,13 @@ export function Products() {
                   <div className="product-visual">
                     {product.id === "pardha" ? (
                       <div className="aspect-[4/3] lg:aspect-auto lg:h-[360px] w-full overflow-hidden rounded-3xl  bg-foreground shadow-[0_24px_80px_rgba(20,22,28,0.07)]">
-                        <video 
-                          src="/pardha.mp4" 
-                          autoPlay 
-                          loop 
-                          muted 
-                          playsInline 
-                          className="h-full w-full object-cover" 
+                        <video
+                          src="/pardha.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="h-full w-full object-cover"
                         />
                       </div>
                     ) : (

@@ -16,6 +16,17 @@
 
   --text-display-lg: clamp(2rem, 4vw, 3.5rem);
   --text-display-lg--line-height: 1.15;
+
+  --animate-marquee: marquee 40s linear infinite;
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 3rem));
+    }
+  }
 }
 
 @layer base {
