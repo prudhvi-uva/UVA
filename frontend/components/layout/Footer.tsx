@@ -36,7 +36,7 @@ export function Footer() {
   }, { scope: footerRef });
 
   return (
-    <footer ref={footerRef} className="border-t border-ink/10 bg-paper pt-16 pb-8">
+    <footer ref={footerRef} className="border-t border-foreground/10 bg-background pt-16 pb-8">
       <div className="mx-auto max-w-(--spacing-container) px-6 md:px-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4 lg:gap-8">
 
@@ -46,7 +46,7 @@ export function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={CONTENT.assets.logo} alt="UVA Tech Services" className="h-26 md:h-36 w-auto" />
             </Link>
-            {/* <p className="font-body text-mist text-sm leading-relaxed">
+            {/* <p className="font-body text-muted text-sm leading-relaxed">
               Engineering intelligent products that transform ideas into AI-powered platforms,
               autonomous agents, and robotics.
             </p> */}
@@ -54,11 +54,11 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-1">
-            <h4 className="text-ink font-heading font-bold mb-4 uppercase tracking-wider">Products</h4>
+            <h4 className="text-foreground font-heading font-bold mb-4 uppercase tracking-wider">Products</h4>
             <ul className="space-y-3 font-body">
               {products.map((product) => (
                 <li key={product.id}>
-                  <Link href={`/product/${product.id}`} className="text-sm text-mist hover:text-ink transition-colors">
+                  <Link href={`/product/${product.id}`} className="text-sm text-muted hover:text-foreground transition-colors">
                     {product.name}
                   </Link>
                 </li>
@@ -68,45 +68,45 @@ export function Footer() {
 
           {/* Offices */}
           <div className="md:col-span-2">
-            <h4 className="footer-col-header text-ink font-heading font-bold mb-5 uppercase tracking-wider relative inline-block">
+            <h4 className="footer-col-header text-foreground font-heading font-bold mb-5 uppercase tracking-wider relative inline-block">
               Offices
-              <span className="header-underline absolute bottom-[-3px] left-0 w-full h-[2px] bg-ink block" />
+              <span className="header-underline absolute bottom-[-3px] left-0 w-full h-[2px] bg-foreground block" />
             </h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {/* UK Office */}
               <div>
-                <p className="font-body text-xs font-bold uppercase tracking-widest text-ink mb-2">
+                <p className="font-body text-xs font-bold uppercase tracking-widest text-foreground mb-2">
                   {CONTENT.contact.offices.uk.title}
                 </p>
-                <p className="font-body text-sm text-mist leading-relaxed mb-3">
+                <p className="font-body text-sm text-muted leading-relaxed mb-3">
                   {CONTENT.contact.offices.uk.address}
                 </p>
                 <div className="space-y-2">
-                  <a href={`mailto:${CONTENT.contact.offices.uk.email}`} className="flex items-center gap-2 font-body text-sm text-mist hover:text-ink transition-colors duration-200">
-                    <Mail className="h-3.5 w-3.5 text-mist flex-shrink-0" />
+                  <a href={`mailto:${CONTENT.contact.offices.uk.email}`} className="flex items-center gap-2 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
+                    <Mail className="h-3.5 w-3.5 text-muted flex-shrink-0" />
                     {CONTENT.contact.offices.uk.email}
                   </a>
-                  <a href={`tel:${CONTENT.contact.offices.uk.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 font-body text-sm text-mist hover:text-ink transition-colors duration-200">
-                    <Phone className="h-3.5 w-3.5 text-mist flex-shrink-0" />
+                  <a href={`tel:${CONTENT.contact.offices.uk.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
+                    <Phone className="h-3.5 w-3.5 text-muted flex-shrink-0" />
                     {CONTENT.contact.offices.uk.phone}
                   </a>
                 </div>
               </div>
               {/* IND Office */}
               <div>
-                <p className="font-body text-xs font-bold uppercase tracking-widest text-ink mb-2">
+                <p className="font-body text-xs font-bold uppercase tracking-widest text-foreground mb-2">
                   {CONTENT.contact.offices.ind.title}
                 </p>
-                <p className="font-body text-sm text-mist leading-relaxed mb-3">
+                <p className="font-body text-sm text-muted leading-relaxed mb-3">
                   {CONTENT.contact.offices.ind.address}
                 </p>
                 <div className="space-y-2">
-                  <a href={`mailto:${CONTENT.contact.offices.ind.email}`} className="flex items-center gap-2 font-body text-sm text-mist hover:text-ink transition-colors duration-200">
-                    <Mail className="h-3.5 w-3.5 text-mist flex-shrink-0" />
+                  <a href={`mailto:${CONTENT.contact.offices.ind.email}`} className="flex items-center gap-2 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
+                    <Mail className="h-3.5 w-3.5 text-muted flex-shrink-0" />
                     {CONTENT.contact.offices.ind.email}
                   </a>
-                  <a href={`tel:${CONTENT.contact.offices.ind.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 font-body text-sm text-mist hover:text-ink transition-colors duration-200">
-                    <Phone className="h-3.5 w-3.5 text-mist flex-shrink-0" />
+                  <a href={`tel:${CONTENT.contact.offices.ind.phone.replace(/\s+/g, '')}`} className="flex items-center gap-2 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
+                    <Phone className="h-3.5 w-3.5 text-muted flex-shrink-0" />
                     {CONTENT.contact.offices.ind.phone}
                   </a>
                 </div>
@@ -117,11 +117,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 border-t border-ink/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-body">
-          <p className="text-xs text-mist">{CONTENT.footer.copyright}</p>
+        <div className="mt-16 border-t border-foreground/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-body">
+          <p className="text-xs text-muted">{CONTENT.footer.copyright}</p>
           <div className="flex gap-6">
             {CONTENT.footer.links.map((link, idx) => (
-              <Link key={idx} href={link.href} className="text-xs text-mist hover:text-ink transition-colors duration-200">
+              <Link key={idx} href={link.href} className="text-xs text-muted hover:text-foreground transition-colors duration-200">
                 {link.label}
               </Link>
             ))}

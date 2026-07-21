@@ -36,8 +36,9 @@ export const products = [
     id: "dp360",
     name: "DP360",
     eyebrow: "AI Commerce Platform",
+    // Launch, manage, and scale your digital business with an AI-powered commerce ecosystem. 
     thesis:
-      "Launch, manage, and scale your digital business with an AI-powered commerce ecosystem. DP360 is a modular commerce platform designed to help businesses digitize operations, streamline sales, and deliver exceptional customer experiences. Whether you're a cloud kitchen, D2C brand, retail chain, café, or FMCG business, DP360 provides everything needed to operate from a single intelligent platform. Two Solutions. One Powerful Platform.",
+      "DP360 is a modular commerce platform designed to help businesses digitize operations, streamline sales, and deliver exceptional customer experiences. Whether you're a cloud kitchen, D2C brand, retail chain, café, or FMCG business, DP360 provides everything needed to operate from a single intelligent platform. Two Solutions. One Powerful Platform.",
     accent: "#D98A2B",
     signal: "pulse",
     highlights: [
@@ -169,8 +170,9 @@ export const products = [
     id: "pardha",
     name: "Pardha",
     eyebrow: "Agentic AI Operating System",
+    // Your AI workforce—designed to think, collaborate, and execute. 
     thesis:
-      "Your AI workforce—designed to think, collaborate, and execute. Pardha is an enterprise-grade Agentic AI Operating System that orchestrates intelligent AI agents across your organization. It connects people, business systems, and enterprise knowledge into a single autonomous decision-making platform. Instead of isolated AI assistants, Pardha creates an AI-powered workforce capable of planning, coordinating, automating, and continuously learning.",
+      "Pardha is an enterprise-grade Agentic AI Operating System that orchestrates intelligent AI agents across your organization. It connects people, business systems, and enterprise knowledge into a single autonomous decision-making platform. Instead of isolated AI assistants, Pardha creates an AI-powered workforce capable of planning, coordinating, automating, and continuously learning.",
     accent: "#5B5BD6",
     signal: "mesh",
     highlights: [
@@ -250,8 +252,9 @@ export const products = [
     id: "aura",
     name: "AURA",
     eyebrow: "Intelligent Robotics Platform",
+    // Building robots that don't just move—they understand, assist, and evolve. 
     thesis:
-      "Building robots that don't just move—they understand, assist, and evolve. AURA is UVA's modular AI Robotics Platform that combines robotics, computer vision, artificial intelligence, embedded systems, cloud computing, and smart automation into a single intelligent ecosystem. Designed as a long-term robotics platform, AURA continuously evolves through new AI capabilities, autonomous behaviors, and specialized applications.",
+      "AURA is UVA's modular AI Robotics Platform that combines robotics, computer vision, artificial intelligence, embedded systems, cloud computing, and smart automation into a single intelligent ecosystem. Designed as a long-term robotics platform, AURA continuously evolves through new AI capabilities, autonomous behaviors, and specialized applications.",
     accent: "#1FA192",
     signal: "sweep",
     highlights: [

@@ -53,59 +53,16 @@ function productStyle(accent: string): CSSProperties {
   } as CSSProperties;
 }
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
-
 export function Products() {
   const container = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    const articles = gsap.utils.toArray<HTMLElement>(".product-article");
-    
-    articles.forEach((article) => {
-      const visual = article.querySelector(".product-visual");
-      const textContent = article.querySelector(".reveal-item:not(.product-visual)");
-
-      // Text content reveal
-      if (textContent) {
-        gsap.from(textContent, {
-          opacity: 0,
-          y: 60,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: article,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
-
-      // Visual reveal (simple fade up)
-      if (visual) {
-        gsap.from(visual, {
-          opacity: 0,
-          y: 60,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: article,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        });
-      }
-    });
-  }, { scope: container });
 
   return (
     <SectionWrapper
       id="products"
-      className="relative overflow-visible bg-paper py-0 text-ink"
+      className="relative overflow-visible bg-background py-0 text-foreground"
       revealSelector="none"
     >
-      <div className="sticky top-0 z-20 -mx-6 border-b border-ink/10 bg-paper/95 px-6 py-3 backdrop-blur md:-mx-12 md:px-12">
+      <div className="sticky top-0 z-20 -mx-6 border-b border-foreground/10 bg-background/95 px-6 py-3 backdrop-blur md:-mx-12 md:px-12">
         <nav
           aria-label="Product quick links"
           className="mx-auto flex w-full max-w-(--spacing-container) items-center justify-between"
@@ -117,7 +74,7 @@ export function Products() {
               <a
                 key={product.id}
                 href={`#${product.id}`}
-                className="rounded-full border border-ink/20 px-4 py-1.5 font-body text-[11px] font-bold uppercase tracking-widest text-ink transition-colors hover:border-ink hover:bg-ink/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+                className="rounded-full border border-foreground/20 px-4 py-1.5 font-body text-[11px] font-bold uppercase tracking-widest text-foreground transition-colors hover:border-foreground hover:bg-foreground/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
                 style={productStyle(product.accent)}
               >
                 {product.name}
@@ -149,14 +106,14 @@ export function Products() {
 
               <div
                 className={cn(
-                  "relative z-10 grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-12",
-                  !visualFirst && "lg:[&>.sticky-wrapper]:order-2",
+                  "relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12",
+                  // !visualFirst && "lg:[&>.sticky-wrapper]:order-2",
                 )}
               >
-                <div className="sticky-wrapper lg:sticky lg:top-32">
+                <div className="lg:top-32">
                   <div className="product-visual">
                     {product.id === "pardha" ? (
-                      <div className="aspect-[4/3] lg:aspect-auto lg:h-[320px] w-full overflow-hidden rounded-3xl border border-ink/10 bg-ink shadow-[0_24px_80px_rgba(20,22,28,0.07)]">
+                      <div className="aspect-[4/3] lg:aspect-auto lg:h-[360px] w-full overflow-hidden rounded-3xl  bg-foreground shadow-[0_24px_80px_rgba(20,22,28,0.07)]">
                         <video 
                           src="/pardha.mp4" 
                           autoPlay 
@@ -181,10 +138,10 @@ export function Products() {
                   <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.22em] ">
                     {product.eyebrow}
                   </p>
-                  <h2 className="font-heading text-5xl font-extrabold uppercase leading-none tracking-wide text-ink md:text-7xl">
+                  <h2 className="font-heading text-5xl font-extrabold uppercase leading-none tracking-wide text-foreground md:text-7xl">
                     {product.name}
                   </h2>
-                  <p className="mt-5 max-w-2xl font-body text-lg leading-8 text-ink/80">
+                  <p className="mt-5 max-w-2xl font-body text-lg leading-8 text-foreground/80">
                     {product.thesis}
                   </p>
 
@@ -192,7 +149,7 @@ export function Products() {
                     {product.perfectFor.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-ink/10 bg-ink/3 px-3 py-2 font-body text-[11px] font-bold uppercase tracking-widest text-mist"
+                        className="rounded-full border border-foreground/10 bg-foreground/3 px-3 py-2 font-body text-[11px] font-bold uppercase tracking-widest text-muted"
                       >
                         {tag}
                       </span>
@@ -201,7 +158,7 @@ export function Products() {
 
                   <Link
                     href={`/product/${product.id}`}
-                    className="mt-8 inline-flex items-center justify-center rounded-full bg-[#e8b300] px-8 py-3.5 font-body text-base font-bold tracking-wide text-ink shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-[#e8b300]"
+                    className="mt-8 inline-flex items-center justify-center rounded-full bg-[#e8b300] px-8 py-3.5 font-body text-base font-bold tracking-wide text-foreground shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-[#e8b300]"
                   >
                     {product.cta}
                   </Link>

@@ -92,7 +92,7 @@ export function SignalWaveform({
   return (
     <div
       className={cn(
-        "signal-frame relative overflow-hidden border border-ink/10 bg-ink text-paper",
+        "signal-frame relative overflow-hidden border border-foreground/10 bg-foreground text-background",
         size === "hero" ? "min-h-[360px] rounded-3xl" : "min-h-[260px] rounded-3xl",
         className,
       )}
@@ -132,7 +132,7 @@ export function SignalWaveform({
         </g>
       </svg>
       <div className="absolute inset-x-0 top-0 h-px bg-[var(--accent)] opacity-70" />
-      <div className="absolute bottom-4 left-4 font-body text-[10px] font-bold uppercase tracking-widest text-paper/45">
+      <div className="absolute bottom-4 left-4 font-body text-[10px] font-bold uppercase tracking-widest text-background/45">
         {variant} signal
       </div>
     </div>

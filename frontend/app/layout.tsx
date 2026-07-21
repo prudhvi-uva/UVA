@@ -67,7 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.variable} ${roboto.variable} ${jetbrainsMono.variable}`}>
-      <body className="antialiased flex flex-col min-h-screen bg-paper text-ink font-body">
+      <body className="antialiased flex flex-col min-h-screen bg-background text-foreground font-body">
         <Navbar />
         {children}
         <Footer />

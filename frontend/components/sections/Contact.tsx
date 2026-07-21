@@ -2,12 +2,9 @@
 import React, { useRef, useState, useCallback } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SectionWrapper } from '@/components/ui/SectionWrapper';
 import { Button } from '@/components/ui/Button';
 import { Check } from 'lucide-react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -58,7 +55,7 @@ function ThreadNode({ id, state }: { id: string; state: FieldState }) {
 
 function LabelMono({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (
-    <label htmlFor={htmlFor} className="block text-xs font-bold uppercase tracking-widest text-mist mb-1.5">
+    <label htmlFor={htmlFor} className="block text-xs font-bold uppercase tracking-widest text-muted mb-1.5">
       {children}
     </label>
   );
@@ -89,49 +86,11 @@ export function Contact() {
 
   // ── Entrance animation & Continuous Backgrounds ─────────────────────────────
   useGSAP(() => {
-    if (prefersReduced) {
-      if (headlineRef.current) gsap.set(headlineRef.current, { opacity: 1 });
-      if (trustRef.current) gsap.set(trustRef.current, { opacity: 1 });
-      gsap.set('.form-card, .form-row', { opacity: 1 });
-      return;
-    }
-    
-    const targets = [];
-    if (headlineRef.current) targets.push(headlineRef.current);
-    if (trustRef.current) targets.push(trustRef.current);
+    if (headlineRef.current) gsap.set(headlineRef.current, { opacity: 1 });
+    if (trustRef.current) gsap.set(trustRef.current, { opacity: 1 });
+    gsap.set('.form-card, .form-row', { opacity: 1 });
 
-    // 1. Text Entrance
-    if (targets.length > 0) {
-      gsap.fromTo(
-        targets,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', stagger: 0.15,
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', once: true },
-        }
-      );
-    }
-
-    // 2. Form Card & Staggered Rows Entrance
-    const formCard = sectionRef.current?.querySelector('.form-card');
-    const formRows = sectionRef.current?.querySelectorAll('.form-row');
-
-    if (formCard && formRows) {
-      const tl = gsap.timeline({
-        scrollTrigger: { trigger: formCard, start: 'top 85%', once: true }
-      });
-
-      tl.fromTo(formCard, 
-        { opacity: 0, y: 40, scale: 0.98 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'power3.out' }
-      ).fromTo(formRows,
-        { opacity: 0, x: -15 },
-        { opacity: 1, x: 0, duration: 0.5, stagger: 0.1, ease: 'power2.out' },
-        "-=0.4"
-      );
-    }
-
-    // 3. Continuous Background Blobs
+    // Continuous Background Blobs
     const blobs = sectionRef.current?.querySelectorAll('.bg-blob');
     if (blobs && blobs.length > 0) {
       blobs.forEach((blob, i) => {
@@ -237,30 +196,30 @@ export function Contact() {
 
   // ── Styling helpers ─────────────────────────────────────────────────────────
   const baseInput = (extra = '') =>
-    `w-full px-4 py-3 rounded-md bg-ink/3 border text-sm text-ink placeholder-mist transition-all duration-200 outline-none focus:ring-2 focus:ring-ink/30 focus:border-ink/40 ${extra}`;
+    `w-full px-4 py-3 rounded-md bg-foreground/3 border text-sm text-foreground placeholder-mist transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-foreground/50 focus-visible:border-foreground/50 ${extra}`;
 
   const fieldBorder = (state: FieldState) =>
-    state === 'valid' ? 'border-ink/40' : state === 'invalid' ? 'border-red-400' : 'border-ink/15';
+    state === 'valid' ? 'border-foreground/40' : state === 'invalid' ? 'border-red-400' : 'border-foreground/15';
 
   return (
-    <SectionWrapper id="contact-us" className="relative bg-paper py-24 overflow-hidden">
+    <SectionWrapper id="contact-us" className="relative bg-background py-24 overflow-hidden">
       
       <div ref={sectionRef} className="max-w-3xl mx-auto flex flex-col items-center relative z-10">
         
         {/* ── Animated Background Blobs ─────────────────────────────────────── */}
-        <div className="bg-blob absolute -top-10 -left-20 w-72 h-72 bg-mist/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="bg-blob absolute top-1/3 -right-20 w-96 h-96 bg-ink/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="bg-blob absolute -bottom-10 left-1/4 w-64 h-64 bg-mist/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-blob absolute -top-10 -left-20 w-72 h-72 bg-muted/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-blob absolute top-1/3 -right-20 w-96 h-96 bg-foreground/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="bg-blob absolute -bottom-10 left-1/4 w-64 h-64 bg-muted/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* ── Top: Centered Copy ───────────────────────────────────────────── */}
         <div className="text-center mb-12 lg:mb-16 flex flex-col items-center relative z-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-4 py-2 mb-6 text-xs font-bold uppercase tracking-widest text-mist">
+          <div className="inline-flex items-center gap-2 rounded-full border border-foreground/15 px-4 py-2 mb-6 text-xs font-bold uppercase tracking-widest text-muted">
             Get in touch
           </div>
 
           <h2
             ref={headlineRef}
-            className="font-heading text-3xl md:text-5xl font-extrabold uppercase tracking-wide text-ink mb-6 leading-tight"
+            className="font-heading text-3xl md:text-5xl font-extrabold uppercase tracking-wide text-foreground mb-6 leading-tight"
             style={{ opacity: prefersReduced ? 1 : 0 }}
           >
             Interested in our products?
@@ -268,7 +227,7 @@ export function Contact() {
 
           <p
             ref={trustRef}
-            className="font-body text-lg text-mist leading-relaxed max-w-xl mx-auto"
+            className="font-body text-lg text-muted leading-relaxed max-w-xl mx-auto"
             style={{ opacity: prefersReduced ? 1 : 0 }}
           >
             Whether you&apos;re interested in DP360, Paarth, or a custom product solution,
@@ -278,11 +237,11 @@ export function Contact() {
 
         {/* ── Bottom: Form ─────────────────────────────────────────────────── */}
         <div 
-          className="form-card w-full bg-paper rounded-3xl border border-ink/10 shadow-2xl shadow-ink/5 p-8 md:p-12 relative overflow-hidden z-10"
+          className="form-card w-full bg-background rounded-3xl border border-foreground/10 shadow-2xl shadow-foreground/5 p-8 md:p-12 relative overflow-hidden z-10"
           style={{ opacity: prefersReduced ? 1 : 0 }}
         >
           {/* Subtle background glow or texture could go here if needed */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-ink/20 to-transparent"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-foreground/20 to-transparent"></div>
 
           <form onSubmit={handleSubmit} noValidate className="relative z-10">
 
@@ -382,11 +341,11 @@ export function Contact() {
               <input type="checkbox"
                 checked={form.consent}
                 onChange={e => setForm(p => ({...p, consent: e.target.checked}))}
-                className="mt-0.5 w-4 h-4 rounded border-ink/20 accent-ink cursor-pointer flex-shrink-0"
+                className="mt-0.5 w-4 h-4 rounded border-foreground/20 accent-foreground cursor-pointer flex-shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-foreground/50"
               />
-              <span className="text-xs font-bold uppercase tracking-widest text-mist leading-relaxed group-hover:text-ink transition-colors">
+              <span className="text-xs font-bold uppercase tracking-widest text-muted leading-relaxed group-hover:text-foreground transition-colors">
                 I agree to be contacted about my enquiry. UVA may store and process my personal data in accordance with its{' '}
-                <a href="/privacy-policy" className="underline hover:text-ink">Privacy Policy</a>.
+                <a href="/privacy-policy" className="underline hover:text-foreground">Privacy Policy</a>.
               </span>
             </label>
 
@@ -403,10 +362,10 @@ export function Contact() {
                 disabled={submitState === 'submitting' || submitState === 'success'}
                 className={`w-full rounded-full uppercase tracking-widest font-semibold py-4 text-sm transition-all duration-300 shadow-md hover:shadow-lg ${
                   submitState === 'success'
-                    ? 'bg-ink text-paper'
+                    ? 'bg-foreground text-background'
                     : submitState === 'submitting'
-                    ? 'bg-ink/60 text-paper cursor-wait'
-                    : 'bg-ink text-paper hover:bg-ink/90'
+                    ? 'bg-foreground/60 text-background cursor-wait'
+                    : 'bg-foreground text-background hover:bg-foreground/90'
                 }`}
               >
                 {submitState === 'success' ? (

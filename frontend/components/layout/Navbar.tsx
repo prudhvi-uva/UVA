@@ -51,7 +51,7 @@ export function Navbar() {
               key={item.label}
               href={item.href}
               className={cn(
-                "nav-link font-body text-base font-bold uppercase tracking-wider transition-colors duration-300 text-ink",
+                "nav-link font-body text-base font-bold uppercase tracking-wider transition-colors duration-300 text-foreground",
                 hasDarkHero?"hover:text-white hover:border-b-3":"hover:text-zinc-600 hover:border-b-1"
               )}
             >
@@ -62,7 +62,7 @@ export function Navbar() {
             variant="primary" 
             size="md" 
             className={cn(
-              "hidden md:flex transition-all duration-300 bg-ink text-paper hover:bg-ink/90"
+              "hidden md:flex transition-all duration-300 bg-foreground text-background hover:bg-foreground/90"
             )}
           >
             Enquire now
@@ -72,7 +72,7 @@ export function Navbar() {
         {/* CTA & Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
           <button
-            className={cn("md:hidden transition-colors duration-300", isTransparent ? "text-paper" : "text-ink")}
+            className={cn("md:hidden transition-colors duration-300", isTransparent ? "text-background" : "text-foreground")}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Menu"
           >
@@ -83,13 +83,13 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-paper border-b border-ink/10 py-4 px-6 shadow-lg">
+        <div className="md:hidden absolute top-full left-0 w-full bg-background border-b border-foreground/10 py-4 px-6 shadow-lg">
           <nav className="flex flex-col gap-4">
             {CONTENT.nav.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-lg font-bold uppercase tracking-wider text-ink hover:text-mist transition-colors"
+                className="text-lg font-bold uppercase tracking-wider text-foreground hover:text-muted transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.label}
