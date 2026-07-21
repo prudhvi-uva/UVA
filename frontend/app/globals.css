@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
 @theme {
+  /* --color-ink: #000000;
+  --color-paper: #FFFFFF;
+  --color-mist: #8A8A8A; */
+  /* --color-ink: #FFFFFF;
+  --color-paper: #050505;
+  --color-mist: #A1A1AA; */
   --color-ink: #FAFAF8; 
-  --color-paper: #14161C;
-  --color-mist: #8A8F9C; 
+  --color-paper: #54585c;
+  --color-mist: #FFFFFF;
   
   --font-heading: var(--font-montserrat);
   --font-body: var(--font-roboto);

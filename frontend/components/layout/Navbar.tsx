@@ -19,8 +19,8 @@ export function Navbar() {
   }, []);
 
   // Determine if the current page has a dark hero background video/color
-  const hasDarkHero = pathname === '/' || pathname === '/uva-leadership' || pathname === '/uva-careers';
-
+  // const hasDarkHero = pathname === '/' || pathname === '/uva-leadership' || pathname === '/uva-careers';
+  const hasDarkHero = true;
   // We want transparent header at top ONLY on pages with dark hero backgrounds
   // const isTransparent = hasDarkHero && !isScrolled;
   const isTransparent = true;
@@ -70,7 +70,7 @@ export function Navbar() {
         </nav>
 
         {/* CTA & Mobile Toggle */}
-        <div className="flex items-center gap-4">
+        <div className="md:hidden flex items-center gap-4">
           <button
             className={cn("md:hidden transition-colors duration-300", isTransparent ? "text-paper" : "text-ink")}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

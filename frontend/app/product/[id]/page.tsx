@@ -332,58 +332,8 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {relatedProducts.map((related) => (
-            <Link
-              key={related.id}
-              href={`/product/${related.id}`}
-              className="group rounded-3xl border border-ink/10 bg-paper p-6 transition-colors hover:border-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
-            >
-              <p className="font-body text-xs font-bold uppercase tracking-widest text-mist">
-                {related.eyebrow}
-              </p>
-              <div className="mt-4 flex items-center justify-between gap-4">
-                <span className="font-heading text-3xl font-extrabold uppercase tracking-wide text-ink">
-                  Explore {related.name}
-                </span>
-                <ArrowRight className="h-5 w-5 shrink-0 text-[var(--accent)] transition-transform group-hover:translate-x-1" />
-              </div>
-            </Link>
-          ))}
-        </div>
       </SectionWrapper>
 
-      <section className="border-t border-ink/10 bg-paper py-20 md:py-32">
-        <SectionWrapper>
-          <div className="reveal-item mx-auto max-w-4xl text-center">
-            <h2 className="font-heading text-4xl font-extrabold uppercase tracking-wide text-ink md:text-6xl">
-              Why Choose UVA Products?
-            </h2>
-            <p className="mt-8 font-body text-xl leading-9 text-ink/80">
-              At UVA, we don't build standalone software—we engineer intelligent platforms that grow with your business. 
-              Our products are designed to integrate seamlessly, enabling organizations to adopt AI, automation, and intelligent decision-making without rebuilding their technology stack.
-            </p>
-            <p className="mt-12 font-mono text-lg font-bold uppercase tracking-widest text-[var(--accent)]">
-              One Vision. Three Intelligent Platforms. Unlimited Possibilities.
-            </p>
-            
-            <div className="mt-16 grid gap-6 text-left sm:grid-cols-3">
-              <div className="rounded-3xl border border-ink/10 p-6 transition-colors hover:border-[var(--accent)]">
-                <h3 className="font-heading text-xl font-bold uppercase text-ink">DP360</h3>
-                <p className="mt-2 font-body text-sm text-ink/75">Transform Commerce with AI.</p>
-              </div>
-              <div className="rounded-3xl border border-ink/10 p-6 transition-colors hover:border-[var(--accent)]">
-                <h3 className="font-heading text-xl font-bold uppercase text-ink">Pardha</h3>
-                <p className="mt-2 font-body text-sm text-ink/75">Build Your AI Workforce.</p>
-              </div>
-              <div className="rounded-3xl border border-ink/10 p-6 transition-colors hover:border-[var(--accent)]">
-                <h3 className="font-heading text-xl font-bold uppercase text-ink">AURA</h3>
-                <p className="mt-2 font-body text-sm text-ink/75">Bring Intelligence into the Physical World.</p>
-              </div>
-            </div>
-          </div>
-        </SectionWrapper>
-      </section>
     </main>
   );
 }

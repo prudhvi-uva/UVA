@@ -102,7 +102,7 @@ export function Products() {
   return (
     <SectionWrapper
       id="products"
-      className="relative z-10 overflow-visible bg-paper py-0 text-ink"
+      className="relative overflow-visible bg-paper py-0 text-ink"
       revealSelector="none"
     >
       <div className="sticky top-0 z-20 -mx-6 border-b border-ink/10 bg-paper/95 px-6 py-3 backdrop-blur md:-mx-12 md:px-12">
@@ -110,10 +110,6 @@ export function Products() {
           aria-label="Product quick links"
           className="mx-auto flex w-full max-w-(--spacing-container) items-center justify-between"
         >
-          {/* Logo on the left */}
-          <div className="flex h-8 w-8 items-center justify-center rounded-full border border-ink/20">
-            <span className="font-heading text-xs font-bold text-ink">N</span>
-          </div>
 
           {/* Product pills */}
           <div className="flex items-center gap-2 overflow-x-auto">
@@ -127,11 +123,6 @@ export function Products() {
                 {product.name}
               </a>
             ))}
-          </div>
-
-          {/* Chat icon on the right */}
-          <div className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-[#1CD06A] text-white shadow-lg transition-transform hover:scale-105">
-            <MessageCircle className="h-5 w-5 fill-current" />
           </div>
         </nav>
       </div>
