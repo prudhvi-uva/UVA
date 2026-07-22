@@ -9,26 +9,46 @@ type SignalWaveformProps = {
 };
 
 function PulseSignal() {
+  const nodes = [
+    [72, 96],
+    [132, 52],
+    [178, 132],
+    [252, 78],
+    [316, 146],
+    [376, 70],
+    [454, 118],
+    [520, 58],
+  ];
+
   return (
     <>
-      <path
-        className="signal-line signal-line-primary"
-        d="M12 126 H54 V72 H70 V126 H112 V96 H126 V126 H172 V46 H188 V126 H232 V82 H248 V126 H304 V64 H320 V126 H372 V104 H388 V126 H444 V58 H460 V126 H508 V86 H524 V126 H588"
-      />
-      <path
-        className="signal-line signal-line-ghost"
-        d="M12 158 H68 V136 H80 V158 H152 V146 H164 V158 H232 V132 H244 V158 H328 V142 H340 V158 H420 V130 H432 V158 H588"
-      />
-      {Array.from({ length: 18 }).map((_, index) => (
-        <line
-          key={index}
-          className="signal-tick"
-          x1={40 + index * 30}
-          x2={40 + index * 30}
-          y1={28}
-          y2={186}
+      <style>{`
+        @keyframes bg-move {
+          0% { transform: translate(0px, 0px) scale(1); }
+          33% { transform: translate(15px, -10px) scale(1.02); }
+          66% { transform: translate(-10px, 15px) scale(0.98); }
+          100% { transform: translate(0px, 0px) scale(1); }
+        }
+      `}</style>
+      <g style={{ animation: "bg-move 15s ease-in-out infinite", transformOrigin: "center" }}>
+        <path
+          className="signal-line signal-line-primary"
+          d="M72 96 L132 52 L178 132 L252 78 L316 146 L376 70 L454 118 L520 58"
         />
-      ))}
+        <path
+          className="signal-line signal-line-ghost"
+          d="M72 96 L178 132 L316 146 M132 52 L252 78 L376 70 L520 58 M252 78 L454 118 M178 132 L376 70"
+        />
+        {nodes.map(([cx, cy], index) => (
+          <circle
+            key={`${cx}-${cy}`}
+            className="signal-node"
+            cx={cx}
+            cy={cy}
+            r={index % 2 === 0 ? 5 : 4}
+          />
+        ))}
+      </g>
     </>
   );
 }

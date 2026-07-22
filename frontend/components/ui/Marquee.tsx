@@ -11,13 +11,13 @@ const ITEMS = [
 
 export function Marquee() {
   return (
-    <section className="w-full py-12 md:py-20 flex flex-col justify-center overflow-hidden bg-background">
+    <section className="w-full pb-5 md:pt-20 flex flex-col justify-center overflow-hidden bg-background">
       {/* Header Content above Marquee */}
       <div className="relative z-20 mb-12 flex flex-col items-center text-center px-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-4 py-1.5 mb-4 text-[10px] font-bold uppercase tracking-widest text-muted">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#ff4f33] bg-zinc-900/5 px-4 py-1.5 mb-4 text-[15px] font-bold uppercase tracking-widest text-[#ff4f33]">
           The UVA Ecosystem
         </div>
-        <h3 className="font-heading text-2xl md:text-4xl font-black uppercase tracking-tight text-foreground">
+        <h3 className="font-heading text-xl md:text-xl font-black uppercase tracking-tight text-foreground">
           Powering Next-Generation Solutions
         </h3>
       </div>
@@ -35,10 +35,10 @@ export function Marquee() {
           <div className="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-16 group-hover:[animation-play-state:paused]">
             {ITEMS.map((item, i) => (
               <div key={`track1-${i}`} className="flex items-center gap-16">
-                <span className="whitespace-nowrap font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-foreground/10 transition-colors duration-300 hover:text-foreground cursor-default">
+                <span className="whitespace-nowrap font-heading text-4xl md:text-6xl lg:text-4xl font-black uppercase tracking-tight text-foreground/10 transition-colors duration-300 hover:text-foreground cursor-default">
                   {item}
                 </span>
-                <span className="text-4xl md:text-6xl lg:text-7xl text-foreground/20">✦</span>
+                <span className="text-4xl md:text-6xl lg:text-4xl text-foreground/20">✦</span>
               </div>
             ))}
           </div>
@@ -47,10 +47,10 @@ export function Marquee() {
           <div className="animate-marquee flex min-w-full shrink-0 items-center justify-around gap-16 group-hover:[animation-play-state:paused]" aria-hidden="true">
             {ITEMS.map((item, i) => (
               <div key={`track2-${i}`} className="flex items-center gap-16">
-                <span className="whitespace-nowrap font-heading text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-foreground/10 transition-colors duration-300 hover:text-foreground cursor-default">
+                <span className="whitespace-nowrap font-heading text-4xl md:text-6xl lg:text-4xl font-black uppercase tracking-tight text-foreground/10 transition-colors duration-300 hover:text-foreground cursor-default">
                   {item}
                 </span>
-                <span className="text-4xl md:text-6xl lg:text-7xl text-foreground/20">✦</span>
+                <span className="text-4xl md:text-6xl lg:text-4xl text-foreground/20">✦</span>
               </div>
             ))}
           </div>

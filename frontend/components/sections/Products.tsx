@@ -60,27 +60,26 @@ export function Products() {
   return (
     <SectionWrapper
       id="products"
-      className="relative overflow-visible bg-background py-0 text-foreground"
+      className=" relative overflow-visible bg-background py-0 text-foreground"
       revealSelector="none"
     >
       {/* Products Section Header */}
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center text-center px-6 py-20 md:px-12">
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center text-center px-6 pb-20 md:px-12">
 
         {/* The Massive Scribble Arrow Background */}
-        <DecorativeArrow className="absolute left-1/2 top-1/2 w-[200%] md:w-[140%] max-w-none -translate-x-1/2 -translate-y-[60%] -rotate-6 text-[#ff4f33] opacity-[0.2] pointer-events-none z-0" />
+        {/* <DecorativeArrow className="absolute left-1/2 top-1/2 w-[200%] md:w-[140%] max-w-none -translate-x-1/2 -translate-y-[60%] -rotate-6 text-[#ff4f33] opacity-[0.2] pointer-events-none z-0" /> */}
 
-        <div className="relative z-10 inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-4 py-1.5 mb-4 text-[10px] font-bold uppercase tracking-widest text-muted">
+        {/* <div className="relative z-10 inline-flex items-center gap-2 rounded-full border border-[#ff4f33] bg-inc-900/5 px-4 py-1.5 mb-4 text-[15px] font-bold uppercase tracking-widest text-[#ff4f33]">
           Our Solutions
-        </div>
+        </div> */}
         <h2 className="relative z-10 font-heading text-3xl md:text-5xl font-black uppercase tracking-tight text-foreground">
           Discover The Products
         </h2>
         <p className="relative z-10 mt-6 text-foreground/70 text-sm md:text-base max-w-2xl">
           From advanced robotics intelligence to executive AI agents and next-generation e-commerce platforms, explore our cutting-edge products designed to accelerate the future.
         </p>
-      </div>
-
-      <div className="divide-y divide-foreground/10" ref={container}>
+      </div>     
+      <div className="divide-y divide-foreground/10 border-t border-foreground/10" ref={container}>
         {products.map((product, index) => {
           const isEven = index % 2 === 0;
 

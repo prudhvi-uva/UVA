@@ -435,7 +435,7 @@ export const CONTENT = {
   },
   nav: [
     { label: "Home", href: "/" },
-    { label: "Products", href: "/product" },
+    { label: "Products", href: "/#products", isDropdown: true },
     { label: "About Us", href: "/uva-leadership" },
   ]
 };
