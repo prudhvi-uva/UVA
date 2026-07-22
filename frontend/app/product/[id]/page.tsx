@@ -133,13 +133,25 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                   className="h-full w-full object-cover" 
                 />
               </div>
+            ) : product.id === "dp360" ? (
+              <div className="relative aspect-[4/3] lg:aspect-square w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+                <video 
+                  src="/Dp360_glimpse.mp4" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="h-full w-full object-cover" 
+                />
+              </div>
             ) : (
-              <SignalWaveform
-                variant={product.signal}
-                color={product.accent}
-                size="hero"
-                className="shadow-[0_32px_100px_rgba(20,22,28,0.08)]"
-              />
+              <div className="relative aspect-[4/3] lg:aspect-square w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+                <img 
+                  src="/Aura_glimpse.png" 
+                  alt={product.name}
+                  className="h-full w-full object-cover" 
+                />
+              </div>
             )}
           </div>
         </div>

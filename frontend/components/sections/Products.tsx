@@ -82,7 +82,7 @@ export function Products() {
 
       <div className="divide-y divide-foreground/10" ref={container}>
         {products.map((product, index) => {
-          const visualFirst = index !== 1;
+          const isEven = index % 2 === 0;
 
           return (
             <article
@@ -100,13 +100,8 @@ export function Products() {
                 />
               </div>
 
-              <div
-                className={cn(
-                  "relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12",
-                  // !visualFirst && "lg:[&>.sticky-wrapper]:order-2",
-                )}
-              >
-                <div className="lg:top-32">
+              <div className="relative z-10 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-12">
+                <div className={cn("lg:top-32", !isEven && "lg:order-2")}>
                   <div className="product-visual">
                     {product.id === "pardha" ? (
                       <div className="aspect-[4/3] lg:aspect-auto lg:h-[360px] w-full overflow-hidden rounded-3xl  bg-foreground shadow-[0_24px_80px_rgba(20,22,28,0.07)]">
@@ -119,17 +114,30 @@ export function Products() {
                           className="h-full w-full object-cover"
                         />
                       </div>
+                    ) : product.id === "dp360" ? (
+                      <div className="aspect-[4/3] lg:aspect-auto lg:h-[360px] w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_24px_80px_rgba(20,22,28,0.07)]">
+                        <video
+                          src="/Dp360_glimpse.mp4"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
                     ) : (
-                      <SignalWaveform
-                        variant={product.signal}
-                        color={product.accent}
-                        className="shadow-[0_24px_80px_rgba(20,22,28,0.07)]"
-                      />
+                      <div className="aspect-[4/3] lg:aspect-auto lg:h-[360px] w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_24px_80px_rgba(20,22,28,0.07)]">
+                        <img
+                          src="/Aura_glimpse.png"
+                          alt={product.name}
+                          className="h-full w-full object-cover"
+                        />
+                      </div>
                     )}
                   </div>
                 </div>
 
-                <div className="reveal-item">
+                <div className={cn("reveal-item", !isEven && "lg:order-1")}>
                   {/* text-[var(--accent)] */}
                   <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.22em] ">
                     {product.eyebrow}
