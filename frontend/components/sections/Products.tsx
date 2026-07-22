@@ -137,8 +137,7 @@ export function Products() {
                 </div>
 
                 <div className={cn("reveal-item", !isEven && "lg:order-1")}>
-                  {/* text-[var(--accent)] */}
-                  <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.22em] ">
+                  <p className="mb-4 font-mono text-sm font-bold uppercase tracking-[0.22em] text-[var(--accent)]">
                     {product.eyebrow}
                   </p>
                   <h2 className="font-heading text-5xl font-extrabold uppercase leading-none tracking-wide text-foreground md:text-7xl">
@@ -161,7 +160,7 @@ export function Products() {
 
                   <Link
                     href={`/product/${product.id}`}
-                    className="mt-8 inline-flex items-center justify-center rounded-full bg-[#e8b300] px-8 py-3.5 font-body text-base font-bold tracking-wide text-foreground shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-[#e8b300]"
+                    className="mt-8 inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-8 py-3.5 font-body text-base font-bold tracking-wide text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:brightness-110"
                   >
                     {product.cta}
                   </Link>
