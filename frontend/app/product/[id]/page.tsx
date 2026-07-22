@@ -123,33 +123,33 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
           <div className="reveal-item">
             {product.id === "pardha" ? (
-              <div className="relative aspect-[4/3] lg:aspect-square w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
-                <video 
-                  src="/pardha.mp4" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  className="h-full w-full object-cover" 
+              <div className="relative  overflow-hidden rounded-3xl shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+                <video
+                  src="/pardha.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className=""
                 />
               </div>
             ) : product.id === "dp360" ? (
-              <div className="relative aspect-[4/3] lg:aspect-square w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
-                <video 
-                  src="/Dp360_glimpse.mp4" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  className="h-full w-full object-cover" 
+              <div className="relative w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+                <video
+                  src="/Dp360_glimpse.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full object-cover"
                 />
               </div>
             ) : (
-              <div className="relative aspect-[4/3] lg:aspect-square w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
-                <img 
-                  src="/Aura_glimpse.png" 
+              <div className="relative w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+                <img
+                  src="/Aura_glimpse.png"
                   alt={product.name}
-                  className="h-full w-full object-cover" 
+                  className=" "
                 />
               </div>
             )}
@@ -207,7 +207,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 <h3 className="font-heading text-2xl font-bold uppercase tracking-wide text-foreground">{solution.name}</h3>
                 <p className="font-mono text-xs font-bold tracking-widest text-[var(--accent)] mt-2">{solution.subtitle}</p>
                 <p className="mt-4 font-body text-base leading-7 text-foreground/75">{solution.description}</p>
-                
+
                 <div className="mt-8">
                   <p className="mb-3 font-body text-xs font-bold uppercase tracking-widest text-foreground">Ideal For</p>
                   <div className="flex flex-wrap gap-2">
@@ -218,7 +218,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="mt-8">
                   <p className="mb-4 font-body text-xs font-bold uppercase tracking-widest text-foreground">Key Features</p>
                   <ul className="grid gap-3 sm:grid-cols-2">
@@ -331,20 +331,6 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper className="border-t border-foreground/10 py-16 md:py-20">
-        <div className="mb-6 flex items-end justify-between gap-6">
-          <h2 className="font-heading text-2xl font-extrabold uppercase tracking-wide md:text-4xl">
-            Explore the throughline
-          </h2>
-          <Link
-            href="/#products"
-            className="hidden font-body text-xs font-bold uppercase tracking-widest text-muted transition-colors hover:text-foreground md:inline-flex"
-          >
-            All products
-          </Link>
-        </div>
-
-      </SectionWrapper>
 
     </main>
   );
