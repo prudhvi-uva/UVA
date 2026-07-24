@@ -115,45 +115,43 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
             <p className="mt-6 max-w-2xl font-body text-xl leading-9 text-foreground/80">
               {product.thesis}
             </p>
-            <Link
-              href="/#contact"
+            <div
               className="mt-9 inline-flex items-center rounded-full border border-foreground bg-foreground px-8 py-4 font-body text-sm font-bold uppercase tracking-widest text-background transition-colors hover:bg-transparent hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
             >
               {product.cta}
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </div>
           </div>
 
           <div className="reveal-item">
             {product.id === "pardha" ? (
-              <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-zinc-950 shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+              <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-zinc-900 shadow-[0_24px_80px_rgba(20,22,28,0.12)] border border-foreground/10">
                 <video
                   src="/pardha.mp4"
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-black/10 mix-blend-multiply" />
               </div>
             ) : product.id === "dp360" ? (
-              <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+              <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-zinc-900 shadow-[0_24px_80px_rgba(20,22,28,0.12)] border border-foreground/10">
                 <video
                   src="/Dp360_glimpse.mp4"
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover object-center scale-[1.04]"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             ) : (
-              <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+              <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-zinc-900 shadow-[0_24px_80px_rgba(20,22,28,0.12)] border border-foreground/10">
                 <img
                   src="/Aura_glimpse.png"
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             )}

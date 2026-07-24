@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-foreground: #FAFAF8; 
-  --color-background: #54585c;
-  --color-muted: #FFFFFF;
+  --color-foreground: #FAFAF8;
+  --color-background: #7D8187;
+  --color-muted: #E7E8EA;
   
   --font-heading: var(--font-montserrat);
   --font-body: var(--font-roboto);

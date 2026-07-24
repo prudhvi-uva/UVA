@@ -140,14 +140,14 @@ export function Footer() {
                   {CONTENT.contact.offices.uk.address}
                 </p>
                 <div className="space-y-3">
-                  <a href={`mailto:${CONTENT.contact.offices.uk.email}`} className="flex items-center gap-3 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 group-hover:border-foreground/30 transition-colors">
+                  <a href={`mailto:${CONTENT.contact.offices.uk.email}`} className="group flex items-center gap-3 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0078D4]/80 text-white shadow-sm">
                       <Mail className="h-3.5 w-3.5" />
                     </span>
                     {CONTENT.contact.offices.uk.email}
                   </a>
-                  <a href={`tel:${CONTENT.contact.offices.uk.phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 group-hover:border-foreground/30 transition-colors">
+                  <a href={`tel:${CONTENT.contact.offices.uk.phone.replace(/\s+/g, '')}`} className="group flex items-center gap-3 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/40 text-white shadow-sm">
                       <Phone className="h-3.5 w-3.5" />
                     </span>
                     {CONTENT.contact.offices.uk.phone}
@@ -165,14 +165,14 @@ export function Footer() {
                   {CONTENT.contact.offices.ind.address}
                 </p>
                 <div className="space-y-3">
-                  <a href={`mailto:${CONTENT.contact.offices.ind.email}`} className="flex items-center gap-3 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 group-hover:border-foreground/30 transition-colors">
+                  <a href={`mailto:${CONTENT.contact.offices.ind.email}`} className="group flex items-center gap-3 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-[#0078D4]/80 text-white shadow-sm">
                       <Mail className="h-3.5 w-3.5" />
                     </span>
                     {CONTENT.contact.offices.ind.email}
                   </a>
-                  <a href={`tel:${CONTENT.contact.offices.ind.phone.replace(/\s+/g, '')}`} className="flex items-center gap-3 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 group-hover:border-foreground/30 transition-colors">
+                  <a href={`tel:${CONTENT.contact.offices.ind.phone.replace(/\s+/g, '')}`} className="group flex items-center gap-3 font-body text-sm text-muted hover:text-foreground transition-colors duration-200">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/40 text-white shadow-sm">
                       <Phone className="h-3.5 w-3.5" />
                     </span>
                     {CONTENT.contact.offices.ind.phone}

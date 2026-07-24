@@ -14,7 +14,8 @@ export function Marquee() {
     <section className="w-full pb-2 md:pt-16 flex flex-col justify-center overflow-hidden bg-background">
       {/* Header Content above Marquee */}
       <div className="relative z-20 mb-8 flex flex-col items-center text-center px-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-black bg-black/5 px-4 py-1.5 mb-4 text-[15px] font-bold uppercase tracking-widest text-black">
+        <div className="inline-flex items-center gap-2 rounded-full bg-black text-white  px-4 py-1.5 mb-4 text-[15px] font-bold uppercase tracking-widest text-black">
+          <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
           The UVA Ecosystem
         </div>
         <h3 className="font-heading text-xl md:text-xl font-black uppercase tracking-tight text-foreground">

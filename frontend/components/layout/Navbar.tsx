@@ -54,16 +54,17 @@ export function Navbar() {
                   onMouseEnter={() => setDesktopDropdownOpen(true)}
                   onMouseLeave={() => setDesktopDropdownOpen(false)}
                 >
-                  <Link
-                    href={item.href}
+                  <button
+                    type="button"
+                    onClick={() => setDesktopDropdownOpen((prev) => !prev)}
                     className={cn(
-                      "nav-link inline-flex items-center gap-1.5 font-body text-base font-bold uppercase tracking-wider transition-colors duration-300 text-zinc-900",
+                      "nav-link inline-flex items-center gap-1.5 font-body text-base font-bold uppercase tracking-wider transition-colors duration-300 text-zinc-900 cursor-pointer",
                       hasDarkHero ? "hover:text-white" : "hover:text-zinc-600"
                     )}
                   >
                     {item.label}
                     <ChevronDown className={cn("h-4 w-4 transition-transform duration-200", desktopDropdownOpen && "rotate-180")} />
-                  </Link>
+                  </button>
 
                   {/* Dropdown Menu Panel */}
                   <div
@@ -115,7 +116,7 @@ export function Navbar() {
               variant="primary"
               size="md"
               className={cn(
-                "hidden md:flex transition-all duration-300 bg-black text-white hover:bg-zinc-800 hover:text-white font-bold cursor-pointer shadow-md hover:scale-105"
+                "hidden md:flex transition-all duration-300 bg-black text-white hover:bg-white hover:text-black font-bold cursor-pointer shadow-md hover:scale-105"
               )}
             >
               Get in touch
@@ -181,7 +182,7 @@ export function Navbar() {
               );
             })}
             <Link href="/#contact-us" onClick={() => setMobileMenuOpen(false)} className="w-full mt-4 block">
-              <Button variant="primary" size="md" className="w-full bg-black text-white hover:bg-zinc-800 hover:text-white font-bold shadow-md">
+              <Button variant="primary" size="md" className="w-full bg-black text-white hover:bg-zinc-800 hover:text-white hover:border-2 hover:border-zinc-800 font-bold shadow-md">
                 Get in touch
               </Button>
             </Link>
