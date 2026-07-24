@@ -255,7 +255,7 @@ export const products = [
     // Building robots that don't just move—they understand, assist, and evolve. 
     thesis:
       "AURA is UVA's modular AI Robotics Platform that combines robotics, computer vision, artificial intelligence, embedded systems, cloud computing, and smart automation into a single intelligent ecosystem. Designed as a long-term robotics platform, AURA continuously evolves through new AI capabilities, autonomous behaviors, and specialized applications.",
-    accent: "#1FA192",
+    accent: "#823BEA",
     signal: "sweep",
     highlights: [
       {

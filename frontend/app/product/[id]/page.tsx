@@ -145,7 +145,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                   loop
                   muted
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center scale-[1.04]"
                 />
               </div>
             ) : (
