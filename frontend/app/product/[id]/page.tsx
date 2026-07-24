@@ -30,6 +30,7 @@ import {
   type Product,
   type ProductHighlight,
 } from "@/lib/products";
+import { cn } from "@/lib/utils";
 
 type ProductPageProps = {
   params: Promise<{
@@ -103,9 +104,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <SectionWrapper className="pt-36 pb-20 md:pt-44 md:pb-28">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
           <div className="reveal-item">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-4">
-              <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
-              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-1.5 shadow-md mb-4">
+              <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
                 {product.eyebrow}
               </span>
             </div>
@@ -161,9 +162,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
       <SectionWrapper className="border-y border-foreground/10 py-20 md:py-24">
         <div className="mb-10 flex max-w-3xl flex-col items-start gap-3">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs">
-            <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
-            <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+          <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-1.5 shadow-md">
+            <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
               Highlights
             </span>
           </div>
@@ -181,7 +182,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 key={highlight.title}
                 className="rounded-3xl border border-foreground/10 bg-background p-6"
               >
-                <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-full border border-foreground/10 bg-foreground/5 text-[var(--accent)]">
+                <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-full bg-[var(--accent)] text-white shadow-md">
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="font-heading text-xl font-bold uppercase tracking-wide text-foreground">
@@ -199,9 +200,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       {product.solutions && product.solutions.length > 0 && (
         <SectionWrapper className="border-b border-foreground/10 pb-20 md:pb-24">
           <div className="mb-10 max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-3">
-              <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
-              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-1.5 shadow-md mb-3">
+              <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
                 Solutions
               </span>
             </div>
@@ -247,9 +248,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <SectionWrapper className="py-20 md:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.38fr_0.62fr]">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-3">
-              <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
-              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-1.5 shadow-md mb-3">
+              <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
                 Capabilities
               </span>
             </div>
@@ -265,7 +266,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 className="flex items-start gap-3 border-b border-foreground/10 pb-4"
               >
                 <Check className="mt-1 h-4 w-4 shrink-0 text-[var(--accent)]" />
-                <span className="font-body text-base leading-7 text-foreground/80">
+                <span className="font-body text-base leading-7 text-foreground">
                   {capability}
                 </span>
               </div>
@@ -295,9 +296,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <SectionWrapper className="border-y border-foreground/10 py-20 md:py-24">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.44fr_0.56fr]">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-3">
-              <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
-              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-1.5 shadow-md mb-3">
+              <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
                 Perfect For
               </span>
             </div>
@@ -320,9 +321,9 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
       <SectionWrapper className="py-20 md:py-24">
         <div className="mb-10 max-w-3xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-3">
-            <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
-            <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+          <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-4 py-1.5 shadow-md mb-3">
+            <span className="h-2 w-2 rounded-full bg-white animate-pulse" />
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
               Why {product.name}
             </span>
           </div>
@@ -337,7 +338,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
               key={reason}
               className="flex min-h-28 items-start gap-4 rounded-3xl border border-foreground/10 bg-background p-5 shadow-xs hover:border-[var(--accent)]/30 transition-colors"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--accent)]/10 font-mono text-xs font-bold text-[var(--accent)]">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--accent)] font-mono text-xs font-bold text-white shadow-md">
                 0{index + 1}
               </span>
               <p className="font-body text-base font-semibold leading-7 text-foreground/80">

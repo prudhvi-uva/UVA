@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   },
   description: "UVA is a dynamic startup that delivers cutting-edge technology solutions. Our seasoned professionals are dedicated to empowering businesses.",
   keywords: ["technology solutions", "data analytics", "AI", "embedded solutions", "cybersecurity", "web development"],
-  authors: [{ name: "UVA Product and IT Services Limited", url: "https://uvatechservices.com" }],
-  metadataBase: new URL("https://uvatechservices.com"),
+  authors: [{ name: "UVA Product and IT Services Limited", url: "https://www.uvaproit.com" }],
+  metadataBase: new URL("https://www.uvaproit.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://uvatechservices.com",
+    url: "https://www.uvaproit.com",
     siteName: "UVA Tech Services",
     title: "UVA Tech Services | Technology Solutions",
     description: "UVA is a dynamic startup that delivers cutting-edge technology solutions. Our seasoned professionals are dedicated to empowering businesses and driving meaningful change.",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   alternates: {
-    canonical: "https://uvatechservices.com",
+    canonical: "https://uvaproit.in",
   },
 };
 

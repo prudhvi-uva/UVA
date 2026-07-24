@@ -173,7 +173,7 @@ export const products = [
     // Your AI workforce—designed to think, collaborate, and execute. 
     thesis:
       "Pardha is an enterprise-grade Agentic AI Operating System that orchestrates intelligent AI agents across your organization. It connects people, business systems, and enterprise knowledge into a single autonomous decision-making platform. Instead of isolated AI assistants, Pardha creates an AI-powered workforce capable of planning, coordinating, automating, and continuously learning.",
-    accent: "#5B5BD6",
+    accent: "#855CF8",
     signal: "mesh",
     highlights: [
       {
@@ -255,7 +255,7 @@ export const products = [
     // Building robots that don't just move—they understand, assist, and evolve. 
     thesis:
       "AURA is UVA's modular AI Robotics Platform that combines robotics, computer vision, artificial intelligence, embedded systems, cloud computing, and smart automation into a single intelligent ecosystem. Designed as a long-term robotics platform, AURA continuously evolves through new AI capabilities, autonomous behaviors, and specialized applications.",
-    accent: "#823BEA",
+    accent: "#1FA192",
     signal: "sweep",
     highlights: [
       {

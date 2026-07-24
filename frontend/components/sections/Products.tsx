@@ -143,8 +143,8 @@ export function Products() {
                       product.id === "dp360"
                         ? "border-amber-300 bg-amber-100/90 text-amber-950"
                         : product.id === "pardha"
-                          ? "border-indigo-300 bg-indigo-100/90 text-indigo-950"
-                          : "border-purple-300 bg-purple-100/90 text-purple-950"
+                          ? "border-violet-300 bg-violet-100/90 text-violet-950"
+                          : "border-teal-300 bg-teal-100/90 text-teal-950"
                     )}
                   >
                     <span
@@ -153,8 +153,8 @@ export function Products() {
                         product.id === "dp360"
                           ? "bg-amber-600"
                           : product.id === "pardha"
-                            ? "bg-cyan-600"
-                            : "bg-purple-600"
+                            ? "bg-violet-600"
+                            : "bg-teal-600"
                       )}
                     />
                     <span className="font-mono text-xs font-bold uppercase tracking-[0.2em]">
@@ -177,8 +177,8 @@ export function Products() {
                           product.id === "dp360"
                             ? "border-amber-300 bg-amber-100/90 text-amber-950"
                             : product.id === "pardha"
-                              ? "border-indigo-300 bg-indigo-100/90 text-indigo-950"
-                              : "border-purple-300 bg-purple-100/90 text-purple-950"
+                              ? "border-violet-300 bg-violet-100/90 text-violet-950"
+                              : "border-teal-300 bg-teal-100/90 text-teal-950"
                         )}
                       >
                         {tag}
