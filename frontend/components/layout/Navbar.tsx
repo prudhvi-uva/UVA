@@ -27,19 +27,19 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "absolute top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent py-2" 
+        "absolute top-0 left-0 right-0 z-50 bg-transparent border-b border-transparent py-2"
       )}
     >
       <div className="mx-auto flex max-w-(--spacing-container) items-center justify-between px-6 md:px-12">
         {/* Logo */}
         <Link href="/" className="logo flex items-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img 
-            src={CONTENT.assets.logo} 
-            alt="UVA Tech Services" 
+          <img
+            src={CONTENT.assets.logo}
+            alt="UVA Tech Services"
             className={cn(
               "w-auto transition-all duration-300 h-34"
-            )} 
+            )}
           />
         </Link>
 
@@ -90,16 +90,6 @@ export function Navbar() {
                           </span>
                         </Link>
                       ))}
-                      <div className="border-t border-foreground/10 pt-2 mt-1">
-                        <Link
-                          href="/#products"
-                          className="flex items-center justify-between p-2.5 rounded-xl font-body text-xs font-bold uppercase tracking-wider text-muted hover:text-foreground hover:bg-foreground/5 transition-colors"
-                          onClick={() => setDesktopDropdownOpen(false)}
-                        >
-                          <span>All Products</span>
-                          <span>→</span>
-                        </Link>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -120,15 +110,17 @@ export function Navbar() {
             );
           })}
 
-          <Button 
-            variant="primary" 
-            size="md" 
-            className={cn(
-              "hidden md:flex transition-all duration-300 bg-zinc-900 text-foreground hover:bg-foreground hover:text-zinc-900 cursor-pointer"
-            )}
-          >
-            Enquire now
-          </Button>
+          <Link href="/#contact-us" className="hidden md:inline-block">
+            <Button
+              variant="primary"
+              size="md"
+              className={cn(
+                "hidden md:flex transition-all duration-300 bg-black text-white hover:bg-zinc-800 hover:text-white font-bold cursor-pointer shadow-md hover:scale-105"
+              )}
+            >
+              Get in touch
+            </Button>
+          </Link>
         </nav>
 
         {/* CTA & Mobile Toggle */}
@@ -171,13 +163,6 @@ export function Navbar() {
                             <span className="text-xs font-normal normal-case text-foreground/60">{prod.eyebrow}</span>
                           </Link>
                         ))}
-                        <Link
-                          href="/#products"
-                          className="text-xs font-bold uppercase tracking-widest text-muted hover:text-foreground pt-1"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          View All Products →
-                        </Link>
                       </div>
                     )}
                   </div>
@@ -195,9 +180,11 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <Button variant="primary" size="md" className="w-full mt-4">
-              Enquire now
-            </Button>
+            <Link href="/#contact-us" onClick={() => setMobileMenuOpen(false)} className="w-full mt-4 block">
+              <Button variant="primary" size="md" className="w-full bg-black text-white hover:bg-zinc-800 hover:text-white font-bold shadow-md">
+                Get in touch
+              </Button>
+            </Link>
           </nav>
         </div>
       )}

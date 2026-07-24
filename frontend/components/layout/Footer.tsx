@@ -70,19 +70,34 @@ export function Footer() {
             </Link>
 
             {/* Social Links below UVA Logo with line */}
-            <div className="w-full pt-4 border-t border-foreground/10 flex items-center gap-4">
+            <div className="w-[70%] pt-4 border-t border-foreground/10 flex items-center gap-4">
               <span className="font-body text-xs font-bold uppercase tracking-widest text-muted">Follow Us</span>
               <div className="flex items-center gap-3">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 text-muted hover:text-foreground hover:border-foreground/30 hover:bg-foreground/10 transition-all duration-200">
-                  <LinkedinIcon className="w-3.5 h-3.5" />
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center w-9 h-9 rounded-full bg-[#0A66C2] text-white hover:bg-[#084e96] hover:scale-110 transition-all duration-300 shadow-sm"
+                >
+                  <LinkedinIcon className="w-4 h-4" />
                   <span className="sr-only">LinkedIn</span>
                 </a>
-                <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 text-muted hover:text-foreground hover:border-foreground/30 hover:bg-foreground/10 transition-all duration-200">
-                  <TwitterIcon className="w-3.5 h-3.5" />
+                <a 
+                  href="https://x.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center w-9 h-9 rounded-full bg-foreground text-background hover:opacity-90 hover:scale-110 transition-all duration-300 shadow-sm"
+                >
+                  <TwitterIcon className="w-4 h-4" />
                   <span className="sr-only">X (Twitter)</span>
                 </a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-8 h-8 rounded-full bg-foreground/5 border border-foreground/10 text-muted hover:text-foreground hover:border-foreground/30 hover:bg-foreground/10 transition-all duration-200">
-                  <InstagramIcon className="w-3.5 h-3.5" />
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="flex items-center justify-center w-9 h-9 rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white hover:opacity-90 hover:scale-110 transition-all duration-300 shadow-sm"
+                >
+                  <InstagramIcon className="w-4 h-4" />
                   <span className="sr-only">Instagram</span>
                 </a>
               </div>
@@ -144,7 +159,7 @@ export function Footer() {
               <div className="group">
                 <p className="footer-col-header text-zinc-900 font-heading font-bold mb-6 uppercase tracking-widest text-md relative inline-block">
                   {CONTENT.contact.offices.ind.title}
-                   <span className="header-underline absolute -bottom-1.5 left-0 w-12 h-[2px] bg-zinc-900 block" />
+                    <span className="header-underline absolute -bottom-1.5 left-0 w-12 h-[2px] bg-zinc-900 block" />
                 </p>
                 <p className="font-body text-sm text-muted leading-relaxed mb-4 max-w-[220px]">
                   {CONTENT.contact.offices.ind.address}

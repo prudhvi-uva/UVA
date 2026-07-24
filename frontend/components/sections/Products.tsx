@@ -64,7 +64,7 @@ export function Products() {
       revealSelector="none"
     >
       {/* Products Section Header */}
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center text-center px-6 pb-20 md:px-12">
+      <div className="relative mx-auto flex max-w-4xl flex-col items-center text-center px-6 pt-2 pb-10 md:px-12">
 
         {/* The Massive Scribble Arrow Background */}
         {/* <DecorativeArrow className="absolute left-1/2 top-1/2 w-[200%] md:w-[140%] max-w-none -translate-x-1/2 -translate-y-[60%] -rotate-6 text-[#ff4f33] opacity-[0.2] pointer-events-none z-0" /> */}
@@ -78,7 +78,7 @@ export function Products() {
         <p className="relative z-10 mt-6 text-foreground/70 text-sm md:text-base max-w-2xl">
           From advanced robotics intelligence to executive AI agents and next-generation e-commerce platforms, explore our cutting-edge products designed to accelerate the future.
         </p>
-      </div>     
+      </div>
       <div className="divide-y divide-foreground/10 border-t border-foreground/10" ref={container}>
         {products.map((product, index) => {
           const isEven = index % 2 === 0;
@@ -103,33 +103,33 @@ export function Products() {
                 <div className={cn("lg:top-32", !isEven && "lg:order-2")}>
                   <div className="product-visual">
                     {product.id === "pardha" ? (
-                      <div className="aspect-[4/3] lg:aspect-auto lg:h-[360px] w-full overflow-hidden rounded-3xl  bg-foreground shadow-[0_24px_80px_rgba(20,22,28,0.07)]">
+                      <div className="aspect-[16/10] lg:aspect-auto lg:h-[380px] w-full overflow-hidden rounded-3xl bg-zinc-900 shadow-[0_24px_80px_rgba(20,22,28,0.12)] border border-foreground/10">
                         <video
                           src="/pardha.mp4"
                           autoPlay
                           loop
                           muted
                           playsInline
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover object-center"
                         />
                       </div>
                     ) : product.id === "dp360" ? (
-                      <div className="aspect-[4/3] lg:aspect-auto lg:h-[360px] w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_24px_80px_rgba(20,22,28,0.07)]">
+                      <div className="aspect-auto w-full overflow-hidden rounded-3xl bg-zinc-900 shadow-[0_24px_80px_rgba(20,22,28,0.12)] border border-foreground/10">
                         <video
                           src="/Dp360_glimpse.mp4"
                           autoPlay
                           loop
                           muted
                           playsInline
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover object-center"
                         />
                       </div>
                     ) : (
-                      <div className="aspect-[4/3] lg:aspect-auto lg:h-[360px] w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_24px_80px_rgba(20,22,28,0.07)]">
+                      <div className="aspect-[16/10] lg:aspect-auto lg:h-[380px] w-full overflow-hidden rounded-3xl bg-zinc-900 shadow-[0_24px_80px_rgba(20,22,28,0.12)] border border-foreground/10">
                         <img
                           src="/Aura_glimpse.png"
                           alt={product.name}
-                          className="h-full w-full object-cover"
+                          className="h-full w-full object-cover object-center"
                         />
                       </div>
                     )}
@@ -137,9 +137,30 @@ export function Products() {
                 </div>
 
                 <div className={cn("reveal-item", !isEven && "lg:order-1")}>
-                  <p className="mb-4 font-mono text-sm font-bold uppercase tracking-[0.22em] text-[var(--accent)]">
-                    {product.eyebrow}
-                  </p>
+                  <div
+                    className={cn(
+                      "mb-4 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 shadow-sm",
+                      product.id === "dp360"
+                        ? "border-amber-300 bg-amber-100/90 text-amber-950"
+                        : product.id === "pardha"
+                          ? "border-indigo-300 bg-indigo-100/90 text-indigo-950"
+                          : "border-teal-300 bg-teal-100/90 text-teal-950"
+                    )}
+                  >
+                    <span
+                      className={cn(
+                        "w-2 h-2 rounded-full animate-pulse",
+                        product.id === "dp360"
+                          ? "bg-amber-600"
+                          : product.id === "pardha"
+                            ? "bg-cyan-600"
+                            : "bg-teal-600"
+                      )}
+                    />
+                    <span className="font-mono text-xs font-bold uppercase tracking-[0.2em]">
+                      {product.eyebrow}
+                    </span>
+                  </div>
                   <h2 className="font-heading text-5xl font-extrabold uppercase leading-none tracking-wide text-foreground md:text-7xl">
                     {product.name}
                   </h2>
@@ -151,7 +172,14 @@ export function Products() {
                     {product.perfectFor.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-full border border-foreground/10 bg-foreground/3 px-3 py-2 font-body text-[11px] font-bold uppercase tracking-widest text-muted"
+                        className={cn(
+                          "rounded-full border px-3.5 py-2 font-body text-[11px] font-bold uppercase tracking-widest shadow-xs transition-transform duration-200 hover:scale-105",
+                          product.id === "dp360"
+                            ? "border-amber-300 bg-amber-100/90 text-amber-950"
+                            : product.id === "pardha"
+                              ? "border-indigo-300 bg-indigo-100/90 text-indigo-950"
+                              : "border-teal-300 bg-teal-100/90 text-teal-950"
+                        )}
                       >
                         {tag}
                       </span>

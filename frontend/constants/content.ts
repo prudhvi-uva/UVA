@@ -133,7 +133,7 @@ export const CONTENT = {
     },
     cta: {
       headline: "Ready to modernize your retail business?",
-      button: "Enquire now!"
+      button: "Get in touch"
     }
   },
   productPage: {

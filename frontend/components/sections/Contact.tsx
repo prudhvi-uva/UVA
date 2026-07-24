@@ -202,7 +202,7 @@ export function Contact() {
     state === 'valid' ? 'border-foreground/40' : state === 'invalid' ? 'border-red-400' : 'border-foreground/15';
 
   return (
-    <SectionWrapper id="contact-us" className="relative bg-background py-24 overflow-hidden">
+    <SectionWrapper id="contact-us" className="relative bg-background pt-10 pb-20 overflow-hidden">
       
       <div ref={sectionRef} className="max-w-3xl mx-auto flex flex-col items-center relative z-10">
         
@@ -212,8 +212,9 @@ export function Contact() {
         <div className="bg-blob absolute -bottom-10 left-1/4 w-64 h-64 bg-muted/10 rounded-full blur-3xl pointer-events-none" />
 
         {/* ── Top: Centered Copy ───────────────────────────────────────────── */}
-        <div className="text-center mb-12 lg:mb-16 flex flex-col items-center relative z-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-foreground/15 px-4 py-2 mb-6 text-xs font-bold uppercase tracking-widest text-muted">
+        <div className="text-center mb-8 lg:mb-10 flex flex-col items-center relative z-10">
+          <div className="inline-flex items-center gap-2 rounded-full border border-black bg-black px-4 py-1.5 mb-6 text-xs font-bold uppercase tracking-widest text-white shadow-md">
+            <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
             Get in touch
           </div>
 
@@ -365,7 +366,7 @@ export function Contact() {
                     ? 'bg-foreground text-background'
                     : submitState === 'submitting'
                     ? 'bg-foreground/60 text-background cursor-wait'
-                    : 'bg-foreground text-background hover:bg-foreground/90'
+                    : 'bg-black text-white hover:bg-zinc-800 font-bold'
                 }`}
               >
                 {submitState === 'success' ? (

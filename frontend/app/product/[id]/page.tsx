@@ -103,9 +103,12 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <SectionWrapper className="pt-36 pb-20 md:pt-44 md:pb-28">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
           <div className="reveal-item">
-            <p className="mb-4 font-mono text-xs font-bold uppercase tracking-[0.24em] text-[var(--accent)]">
-              {product.eyebrow}
-            </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-4">
+              <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+                {product.eyebrow}
+              </span>
+            </div>
             <h1 className="font-heading text-6xl font-extrabold uppercase leading-none tracking-wide text-foreground md:text-8xl">
               {product.name}
             </h1>
@@ -123,33 +126,34 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
           <div className="reveal-item">
             {product.id === "pardha" ? (
-              <div className="relative  overflow-hidden rounded-3xl shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+              <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-zinc-950 shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
                 <video
                   src="/pardha.mp4"
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className=""
+                  className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-black/10 mix-blend-multiply" />
               </div>
             ) : product.id === "dp360" ? (
-              <div className="relative w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+              <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
                 <video
                   src="/Dp360_glimpse.mp4"
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="h-full object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
             ) : (
-              <div className="relative w-full overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
+              <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-foreground shadow-[0_32px_100px_rgba(20,22,28,0.08)]">
                 <img
                   src="/Aura_glimpse.png"
                   alt={product.name}
-                  className=" "
+                  className="w-full h-full object-cover"
                 />
               </div>
             )}
@@ -158,10 +162,13 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       </SectionWrapper>
 
       <SectionWrapper className="border-y border-foreground/10 py-20 md:py-24">
-        <div className="mb-10 flex max-w-3xl flex-col gap-3">
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent)]">
-            Highlights
-          </p>
+        <div className="mb-10 flex max-w-3xl flex-col items-start gap-3">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs">
+            <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+              Highlights
+            </span>
+          </div>
           <h2 className="font-heading text-3xl font-extrabold uppercase tracking-wide md:text-5xl">
             Built for the work that matters
           </h2>
@@ -194,9 +201,12 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       {product.solutions && product.solutions.length > 0 && (
         <SectionWrapper className="border-b border-foreground/10 pb-20 md:pb-24">
           <div className="mb-10 max-w-3xl">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent)]">
-              Solutions
-            </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-3">
+              <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+                Solutions
+              </span>
+            </div>
             <h2 className="mt-3 font-heading text-3xl font-extrabold uppercase tracking-wide md:text-5xl">
               Two Solutions. One Powerful Platform.
             </h2>
@@ -239,9 +249,12 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <SectionWrapper className="py-20 md:py-24">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.38fr_0.62fr]">
           <div>
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent)]">
-              Capabilities
-            </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-3">
+              <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+                Capabilities
+              </span>
+            </div>
             <h2 className="mt-3 font-heading text-3xl font-extrabold uppercase tracking-wide md:text-5xl">
               One layer deeper
             </h2>
@@ -284,9 +297,12 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       <SectionWrapper className="border-y border-foreground/10 py-20 md:py-24">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.44fr_0.56fr]">
           <div>
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent)]">
-              Perfect For
-            </p>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-3">
+              <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+                Perfect For
+              </span>
+            </div>
             <h2 className="mt-3 font-heading text-3xl font-extrabold uppercase tracking-wide md:text-5xl">
               Where {product.name} fits
             </h2>
@@ -306,22 +322,25 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
       <SectionWrapper className="py-20 md:py-24">
         <div className="mb-10 max-w-3xl">
-          <p className="font-mono text-xs font-bold uppercase tracking-[0.22em] text-[var(--accent)]">
-            Why {product.name}
-          </p>
+          <div className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent)]/15 px-4 py-1.5 shadow-xs mb-3">
+            <span className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
+            <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+              Why {product.name}
+            </span>
+          </div>
           <h2 className="mt-3 font-heading text-3xl font-extrabold uppercase tracking-wide md:text-5xl">
             The signal behind the system
           </h2>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {product.why.map((reason) => (
+          {product.why.map((reason, index) => (
             <div
               key={reason}
-              className="flex min-h-28 items-start gap-4 rounded-3xl border border-foreground/10 bg-background p-5"
+              className="flex min-h-28 items-start gap-4 rounded-3xl border border-foreground/10 bg-background p-5 shadow-xs hover:border-[var(--accent)]/30 transition-colors"
             >
-              <span className="font-mono text-lg font-bold text-[var(--accent)]">
-                0
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--accent)]/10 font-mono text-xs font-bold text-[var(--accent)]">
+                0{index + 1}
               </span>
               <p className="font-body text-base font-semibold leading-7 text-foreground/80">
                 {reason}

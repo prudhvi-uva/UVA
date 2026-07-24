@@ -11,10 +11,10 @@ const ITEMS = [
 
 export function Marquee() {
   return (
-    <section className="w-full pb-5 md:pt-20 flex flex-col justify-center overflow-hidden bg-background">
+    <section className="w-full pb-2 md:pt-16 flex flex-col justify-center overflow-hidden bg-background">
       {/* Header Content above Marquee */}
-      <div className="relative z-20 mb-12 flex flex-col items-center text-center px-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#ff4f33] bg-zinc-900/5 px-4 py-1.5 mb-4 text-[15px] font-bold uppercase tracking-widest text-[#ff4f33]">
+      <div className="relative z-20 mb-8 flex flex-col items-center text-center px-4">
+        <div className="inline-flex items-center gap-2 rounded-full border border-black bg-black/5 px-4 py-1.5 mb-4 text-[15px] font-bold uppercase tracking-widest text-black">
           The UVA Ecosystem
         </div>
         <h3 className="font-heading text-xl md:text-xl font-black uppercase tracking-tight text-foreground">
